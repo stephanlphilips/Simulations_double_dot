@@ -5,7 +5,15 @@ import c_solver.ME_solver as me
 
 import numpy as np
 
-def test_t2(noise_type):
+def test_noise(noise_type):
+	'''
+	function that test the noise types implemented.
+	noise types can be:
+		Static Gaussian
+		White noise
+		1/f^alpha voltage noise
+	'''
+	
 	# define hamiltonian
 	db = double_dot_hamiltonian(18.4e9, 19.7e9, 850e9, 840e9, 0*0.250e9)
 	# # # J = 6MHZ @ epsilon 835e9, t = 210e6
@@ -50,7 +58,7 @@ def test_t2(noise_type):
 		plt.savefig('Pink_noise.png')
 	plt.show()
 
-test_t2('pink')
-test_t2('static_gauss')
-test_t2('white')
+test_noise('white')
+test_noise('static_gauss')
+test_noise('pink')
 
