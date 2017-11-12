@@ -18,20 +18,19 @@ def test_t2():
 	chargingE = 850e9*np.pi*2
 	detuningE = 828.6e9*np.pi*2
 
-	B_noise_2 = me.noise_py()
-	B_noise_2.init_white(db.H_B_field2,0.56e3)
-
+	# B_noise_2 = me.noise_py()
+	# B_noise_2.init_white(0.26*db.H_B_field2*db.H_B_field1,2.12e3)
+	# db.add_noise_object(B_noise_2)
 	# Add noise object to simulation object.
-	db.add_noise_object(B_noise_2)
-
-	# db = add_nuclear_and_charge_noise(db)
-	db.number_of_sim_for_static_noise(500)
+	# db.awg_pulse(detuningE/np.pi/2, 0e-9, 1000e-9, 1e-9)
+	db = add_nuclear_and_charge_noise(db)
+	db.number_of_sim_for_static_noise(400)
 	db.calc_time_evolution(psi0, 0e-9, 1600e-9, 4000)
 	db.plot_expect()
-	db.plot_pop()
+	# db.plot_pop()
 	
 	plt.show()
-
+test_t2()
 def expected_value(t, right_qubit = True, num_sim=200):
 	psi0= np.array(list(basis(6,0)*basis(6,0).dag()))[:,0]
 	# define hamiltonian
@@ -80,12 +79,13 @@ def expected_value(t, right_qubit = True, num_sim=200):
 	return np.array([pop_00, pop_01, pop_10, pop_11])
 	# db.save_pop("./../GROVERS_DATA/NORMAL/pop"+state+".txt")
 
-density = 40
-pt = np.linspace(0.8e-6, 2.5e-6,density)
-data = np.zeros([density,5])
+# print(expected_value(0, right_qubit=False))
+# density = 80
+# pt = np.linspace(0e-6, 3e-6,density)
+# data = np.zeros([density,5])
 
-# Qubit 1
-for i in range(density):
-	data[i,0] = pt[i]
-	data[i,1:] = expected_value(pt[i], right_qubit=False)
-	np.savetxt('DephD_test1_L.txt', data)
+# # Qubit 1
+# for i in range(density):
+# 	data[i,0] = pt[i]
+# 	data[i,1:] = expected_value(pt[i], right_qubit=False)
+# 	np.savetxt('DephD_noise_1570_L.txt', data)

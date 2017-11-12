@@ -1,0 +1,455 @@
+
+
+*******************************************************************************
+Sun Nov 12 14:36:53 2017
+
+
+FIT:    data read from 'DephD_test1_L.txt' u ($1*1e6):5
+        format = x:z
+        x range restricted to [0.00000 : 3.00000]
+        #datapoints = 40
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x) = 2.7182818284590452353**(-(x*1e-6)/tau)*sin(2*3.14*omega*(x*1e-6) + phi)/2 +0.5
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   tau           omega         phi          
+   0 2.0379984365e-01   0.00e+00  4.90e-01    1.600000e-06   3.000000e+06  -2.100000e+00
+BREAK: Singular matrix in Invert_RtR
+
+*******************************************************************************
+Sun Nov 12 14:37:23 2017
+
+
+FIT:    data read from 'DephD_noise_1550_L.txt' u ($1*1e6):5
+        format = x:z
+        x range restricted to [0.00000 : 3.00000]
+        #datapoints = 40
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x) = 2.7182818284590452353**(-(x*1e-6)/tau)*sin(2*3.14*omega*(x*1e-6) + phi)/2 +0.5
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   tau           omega         phi          
+   0 6.2624459877e-02   0.00e+00  2.17e+00    1.600000e-06   3.000000e+06  -2.100000e+00
+   5 2.3549262225e-02  -1.40e-02  2.17e-01    1.486924e-06   2.959175e+06  -1.548223e+00
+
+After 5 iterations the fit converged.
+final sum of squares of residuals : 0.0235493
+rel. change during last iteration : -1.39603e-07
+
+degrees of freedom    (FIT_NDF)                        : 37
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.0252283
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.000636467
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+tau             = 1.48692e-06      +/- 4.82e-08     (3.241%)
+omega           = 2.95918e+06      +/- 1.119e+04    (0.3783%)
+phi             = -1.54822         +/- 0.1002       (6.47%)
+
+correlation matrix of the fit parameters:
+                tau    omega  phi    
+tau             1.000 
+omega           0.059  1.000 
+phi            -0.064 -0.951  1.000 
+
+
+*******************************************************************************
+Sun Nov 12 14:38:41 2017
+
+
+FIT:    data read from 'DephD_noise_1550_L.txt' u ($1*1e6):5
+        format = x:z
+        x range restricted to [0.00000 : 3.00000]
+        #datapoints = 40
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x) = A*2.7182818284590452353**(-(x*1e-6)/tau)*sin(2*3.14*omega*(x*1e-6) + phi)/2 +0.5
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   tau           omega         phi           A            
+   0 6.2624459877e-02   0.00e+00  1.88e+00    1.600000e-06   3.000000e+06  -2.100000e+00   1.000000e+00
+   5 2.1260217636e-02  -8.60e-02  1.88e-05    1.817329e-06   2.956853e+06  -1.525439e+00   8.339442e-01
+
+After 5 iterations the fit converged.
+final sum of squares of residuals : 0.0212602
+rel. change during last iteration : -8.60348e-07
+
+degrees of freedom    (FIT_NDF)                        : 36
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.0243015
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.000590562
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+tau             = 1.81733e-06      +/- 2.13e-07     (11.72%)
+omega           = 2.95685e+06      +/- 1.054e+04    (0.3563%)
+phi             = -1.52544         +/- 0.09787      (6.416%)
+A               = 0.833944         +/- 0.07782      (9.332%)
+
+correlation matrix of the fit parameters:
+                tau    omega  phi    A      
+tau             1.000 
+omega          -0.056  1.000 
+phi             0.062 -0.951  1.000 
+A              -0.948  0.077 -0.085  1.000 
+
+
+*******************************************************************************
+Sun Nov 12 14:41:36 2017
+
+
+FIT:    data read from 'DephD_noise_1550_L.txt' u ($1*1e6):5
+        format = x:z
+        x range restricted to [0.00000 : 3.00000]
+        #datapoints = 40
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x) = A*2.7182818284590452353**(-(x*1e-6)/tau)*sin(2*3.14*omega*(x*1e-6) + phi)/2 +0.5 + (1-A)/2
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   tau           omega         phi           A            
+   0 6.2624459877e-02   0.00e+00  1.89e+00    1.600000e-06   3.000000e+06  -2.100000e+00   1.000000e+00
+   5 1.8592397496e-02  -8.40e-03  1.89e+00    1.457321e-06   2.961974e+06  -1.572860e+00   1.022495e+00
+
+After 5 iterations the fit converged.
+final sum of squares of residuals : 0.0185924
+rel. change during last iteration : -8.39843e-08
+
+degrees of freedom    (FIT_NDF)                        : 36
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.0227257
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.000516455
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+tau             = 1.45732e-06      +/- 4.263e-08    (2.925%)
+omega           = 2.96197e+06      +/- 1.013e+04    (0.342%)
+phi             = -1.57286         +/- 0.09022      (5.736%)
+A               = 1.0225           +/- 0.00726      (0.71%)
+
+correlation matrix of the fit parameters:
+                tau    omega  phi    A      
+tau             1.000 
+omega           0.040  1.000 
+phi            -0.046 -0.951  1.000 
+A              -0.208  0.087 -0.084  1.000 
+
+
+*******************************************************************************
+Sun Nov 12 14:41:58 2017
+
+
+FIT:    data read from 'DephD_noise_1550_L.txt' u ($1*1e6):5
+        format = x:z
+        x range restricted to [0.00000 : 3.00000]
+        #datapoints = 40
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x) = A*2.7182818284590452353**(-(x*1e-6)/tau)*sin(2*3.14*omega*(x*1e-6) + phi)/2 +0.5 + (1-A)/2
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   tau           omega         phi           A            
+   0 2.0310859856e-01   0.00e+00  1.70e+00    1.600000e-06   3.000000e+06  -2.100000e+00   9.000000e-01
+   5 1.8592412313e-02  -5.58e-03  1.70e+00    1.457339e-06   2.961966e+06  -1.572787e+00   1.022494e+00
+
+After 5 iterations the fit converged.
+final sum of squares of residuals : 0.0185924
+rel. change during last iteration : -5.57666e-08
+
+degrees of freedom    (FIT_NDF)                        : 36
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.0227257
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.000516456
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+tau             = 1.45734e-06      +/- 4.263e-08    (2.925%)
+omega           = 2.96197e+06      +/- 1.013e+04    (0.342%)
+phi             = -1.57279         +/- 0.09022      (5.736%)
+A               = 1.02249          +/- 0.00726      (0.71%)
+
+correlation matrix of the fit parameters:
+                tau    omega  phi    A      
+tau             1.000 
+omega           0.040  1.000 
+phi            -0.046 -0.951  1.000 
+A              -0.208  0.087 -0.084  1.000 
+
+
+*******************************************************************************
+Sun Nov 12 14:42:03 2017
+
+
+FIT:    data read from 'DephD_noise_1550_L.txt' u ($1*1e6):5
+        format = x:z
+        x range restricted to [0.00000 : 3.00000]
+        #datapoints = 40
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x) = A*2.7182818284590452353**(-(x*1e-6)/tau)*sin(2*3.14*omega*(x*1e-6) + phi)/2 +0.5 + (1-A)/2
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   tau           omega         phi          
+   0 2.0310859856e-01   0.00e+00  1.95e+00    1.600000e-06   3.000000e+06  -2.100000e+00
+   5 1.6533331918e-01  -2.47e-02  1.95e-01    1.648119e-06   2.945749e+06  -1.427928e+00
+
+After 5 iterations the fit converged.
+final sum of squares of residuals : 0.165333
+rel. change during last iteration : -2.46821e-07
+
+degrees of freedom    (FIT_NDF)                        : 37
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.0668466
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.00446847
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+tau             = 1.64812e-06      +/- 1.566e-07    (9.502%)
+omega           = 2.94575e+06      +/- 2.949e+04    (1.001%)
+phi             = -1.42793         +/- 0.2696       (18.88%)
+
+correlation matrix of the fit parameters:
+                tau    omega  phi    
+tau             1.000 
+omega           0.055  1.000 
+phi            -0.060 -0.951  1.000 
+
+
+*******************************************************************************
+Sun Nov 12 14:43:06 2017
+
+
+FIT:    data read from 'DephD_noise_1550_L.txt' u ($1*1e6):5
+        format = x:z
+        x range restricted to [0.00000 : 3.00000]
+        #datapoints = 40
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x) = A*2.7182818284590452353**(-(x*1e-6)/tau)*sin(2*3.14*omega*(x*1e-6) + phi)/2 +0.5 + (1-A)/2
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   tau           omega         phi          
+   0 2.8459667270e+00   0.00e+00  1.08e+00    1.600000e-06   3.000000e+06  -2.100000e+00
+   6 2.6777495458e+00   0.00e+00  1.08e+04    4.419252e-06   2.878058e+06  -7.695571e-01
+
+After 6 iterations the fit converged.
+final sum of squares of residuals : 2.67775
+rel. change during last iteration : 0
+
+degrees of freedom    (FIT_NDF)                        : 37
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.26902
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.0723716
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+tau             = 4.41925e-06      +/- 4.23e-06     (95.73%)
+omega           = 2.87806e+06      +/- 1.119e+05    (3.888%)
+phi             = -0.769557        +/- 1.155        (150.1%)
+
+correlation matrix of the fit parameters:
+                tau    omega  phi    
+tau             1.000 
+omega           0.053  1.000 
+phi            -0.051 -0.954  1.000 
+
+
+*******************************************************************************
+Sun Nov 12 14:43:38 2017
+
+
+FIT:    data read from 'DephD_noise_1550_L.txt' u ($1*1e6):5
+        format = x:z
+        x range restricted to [0.00000 : 3.00000]
+        #datapoints = 40
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x) = A*2.7182818284590452353**(-(x*1e-6)/tau)*sin(2*3.14*omega*(x*1e-6) + phi)/2 +0.5
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   tau           omega         phi          
+   0 1.8574195191e-01   0.00e+00  1.08e+00    1.600000e-06   3.000000e+06  -2.100000e+00
+   7 3.7829700455e-02  -6.97e-02  1.08e-07    4.197801e-06   2.951577e+06  -1.473424e+00
+
+After 7 iterations the fit converged.
+final sum of squares of residuals : 0.0378297
+rel. change during last iteration : -6.97188e-07
+
+degrees of freedom    (FIT_NDF)                        : 37
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.0319754
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.00102242
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+tau             = 4.1978e-06       +/- 4.608e-07    (10.98%)
+omega           = 2.95158e+06      +/- 1.358e+04    (0.4602%)
+phi             = -1.47342         +/- 0.1387       (9.41%)
+
+correlation matrix of the fit parameters:
+                tau    omega  phi    
+tau             1.000 
+omega           0.042  1.000 
+phi            -0.047 -0.953  1.000 
+
+
+*******************************************************************************
+Sun Nov 12 14:43:58 2017
+
+
+FIT:    data read from 'DephD_noise_1550_L.txt' u ($1*1e6):5
+        format = x:z
+        x range restricted to [0.00000 : 3.00000]
+        #datapoints = 40
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x) = A*2.7182818284590452353**(-(x*1e-6)/tau)*sin(2*3.14*omega*(x*1e-6) + phi)/2 +0.5
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   tau           omega         phi          
+   0 5.6574692524e-02   0.00e+00  1.95e+00    1.600000e-06   3.000000e+06  -2.100000e+00
+   5 2.1660774291e-02  -2.06e-04  1.95e+00    1.664597e-06   2.957786e+06  -1.534618e+00
+
+After 5 iterations the fit converged.
+final sum of squares of residuals : 0.0216608
+rel. change during last iteration : -2.06165e-09
+
+degrees of freedom    (FIT_NDF)                        : 37
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.0241956
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.000585426
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+tau             = 1.6646e-06       +/- 5.721e-08    (3.437%)
+omega           = 2.95779e+06      +/- 1.056e+04    (0.357%)
+phi             = -1.53462         +/- 0.09654      (6.291%)
+
+correlation matrix of the fit parameters:
+                tau    omega  phi    
+tau             1.000 
+omega           0.055  1.000 
+phi            -0.061 -0.950  1.000 
+
+
+*******************************************************************************
+Sun Nov 12 18:14:05 2017
+
+
+FIT:    data read from 'DephD_noise_1550_L.txt' u ($1*1e6):5
+        format = x:z
+        x range restricted to [0.00000 : 3.00000]
+        #datapoints = 40
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x) = A*2.7182818284590452353**(-(x*1e-6)/tau)*sin(2*3.14*omega*(x*1e-6) + phi)/2 +0.5
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   tau           omega         phi          
+   0 5.6574692524e-02   0.00e+00  1.95e+00    1.600000e-06   3.000000e+06  -2.100000e+00
+   5 2.1660774291e-02  -2.06e-04  1.95e+00    1.664597e-06   2.957786e+06  -1.534618e+00
+
+After 5 iterations the fit converged.
+final sum of squares of residuals : 0.0216608
+rel. change during last iteration : -2.06165e-09
+
+degrees of freedom    (FIT_NDF)                        : 37
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.0241956
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.000585426
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+tau             = 1.6646e-06       +/- 5.721e-08    (3.437%)
+omega           = 2.95779e+06      +/- 1.056e+04    (0.357%)
+phi             = -1.53462         +/- 0.09654      (6.291%)
+
+correlation matrix of the fit parameters:
+                tau    omega  phi    
+tau             1.000 
+omega           0.055  1.000 
+phi            -0.061 -0.950  1.000 
+
+
+*******************************************************************************
+Sun Nov 12 18:14:38 2017
+
+
+FIT:    data read from 'DephD_noise_1570_L.txt' u ($1*1e6):5
+        format = x:z
+        x range restricted to [0.00000 : 3.00000]
+        #datapoints = 80
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x) = A*2.7182818284590452353**(-(x*1e-6)/tau)*sin(2*3.14*omega*(x*1e-6) + phi)/2 +0.5
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   tau           omega         phi          
+   0 3.2422835562e-01   0.00e+00  1.73e+00    1.600000e-06   3.000000e+06  -2.100000e+00
+   4 3.4563892581e-02  -5.38e-01  1.73e-04    1.633799e-06   2.959128e+06  -1.566770e+00
+
+After 4 iterations the fit converged.
+final sum of squares of residuals : 0.0345639
+rel. change during last iteration : -5.38067e-06
+
+degrees of freedom    (FIT_NDF)                        : 77
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.0211868
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.000448882
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+tau             = 1.6338e-06       +/- 3.942e-08    (2.413%)
+omega           = 2.95913e+06      +/- 3527         (0.1192%)
+phi             = -1.56677         +/- 0.02196      (1.402%)
+
+correlation matrix of the fit parameters:
+                tau    omega  phi    
+tau             1.000 
+omega           0.019  1.000 
+phi            -0.015 -0.749  1.000 
+
+
+*******************************************************************************
+Sun Nov 12 18:15:10 2017
+
+
+FIT:    data read from 'DephD_noise_1570_L.txt' u ($1*1e6):5
+        format = x:z
+        x range restricted to [0.00000 : 3.00000]
+        #datapoints = 80
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x) = A*2.7182818284590452353**(-(x*1e-6)/tau)*sin(2*3.14*omega*(x*1e-6) + phi)/2 +0.5
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   tau           omega         phi           A            
+   0 3.2422835562e-01   0.00e+00  1.50e+00    1.600000e-06   3.000000e+06  -2.100000e+00   9.000000e-01
+   4 3.3926918267e-02  -1.34e-02  1.50e-04    1.685066e-06   2.959290e+06  -1.568240e+00   8.778985e-01
+
+After 4 iterations the fit converged.
+final sum of squares of residuals : 0.0339269
+rel. change during last iteration : -1.3388e-07
+
+degrees of freedom    (FIT_NDF)                        : 76
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.0211283
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.000446407
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+tau             = 1.68507e-06      +/- 6.111e-08    (3.626%)
+omega           = 2.95929e+06      +/- 3508         (0.1185%)
+phi             = -1.56824         +/- 0.02227      (1.42%)
+A               = 0.877898         +/- 0.01853      (2.11%)
+
+correlation matrix of the fit parameters:
+                tau    omega  phi    A      
+tau             1.000 
+omega           0.046  1.000 
+phi            -0.055 -0.752  1.000 
+A              -0.734 -0.046  0.061  1.000 

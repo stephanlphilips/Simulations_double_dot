@@ -21,11 +21,11 @@ def add_nuclear_and_charge_noise(sim_object):
 	
 	# T2* qubit 1 -- nuclear
 	B_noise_1 = me.noise_py()
-	B_noise_1.init_gauss(sim_object.H_B_field1,1.2e-6)
+	B_noise_1.init_gauss(sim_object.H_B_field1,1.45e-6)
 
 	# T2* qubit 2 -- nuclear
 	B_noise_2 = me.noise_py()
-	B_noise_2.init_gauss(sim_object.H_B_field2,0.65e-6)
+	B_noise_2.init_gauss(sim_object.H_B_field2,0.95e-6)
 
 	# Add noise object to simulation object.
 	sim_object.add_noise_object(B_noise_1)
@@ -33,9 +33,9 @@ def add_nuclear_and_charge_noise(sim_object):
 
 	# Electrical noise ++ (static with realtionchip form the J plots). --- note here everything expressed in form of pauli matrices and not spin matrices (bi)
 	charge_noise = me.noise_py()
-	charge_noise.init_white(np.zeros([6,6],dtype=np.complex),0.56e3)
-	charge_noise.add_param_matrix_dep(sim_object.H_B_field1*0.61 + 0.23*sim_object.H_B_field2 + 0.26*sim_object.H_B_field1*sim_object.H_B_field2 , (4, 4), np.array([[0,1/detuningE],[0,chargingE]], dtype=np.complex))
-	charge_noise.add_param_matrix_dep(sim_object.H_B_field1*0.12 + 0.24*sim_object.H_B_field2, (4, 4), np.array([[0,-1/detuningE],[0,chargingE-detuningE]], dtype=np.complex))
+	charge_noise.init_white(np.zeros([6,6],dtype=np.complex), 1.57e3)
+	charge_noise.add_param_matrix_dep(sim_object.H_B_field1*0.61 + 0.23*sim_object.H_B_field2 +0.26*sim_object.H_B_field1*sim_object.H_B_field2, (4,4), np.array([[0,-1/detuningE],[0,chargingE]], dtype=np.complex))
+	charge_noise.add_param_matrix_dep(sim_object.H_B_field1*0.12 + 0.24*sim_object.H_B_field2, (4, 4), np.array([[0,1/detuningE],[0,chargingE-detuningE]], dtype=np.complex))
 
 	sim_object.add_noise_object(charge_noise)
 
