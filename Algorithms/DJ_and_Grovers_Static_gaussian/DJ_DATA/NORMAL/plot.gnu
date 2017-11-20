@@ -18,30 +18,30 @@ unset key
 set yrange [-0.1:1.1]
 set xrange [0 :600]
 set output 'DJ1_IDEN.eps'
-plot 'DJ1_data.txt' u ($1-250):2:($6) w errorbars title "00" ls 1 ,\
-	'DJ1_data.txt' u ($1-250):3:($7) w errorbars title "01" ls 2,\
-	'DJ1_data.txt' u ($1-250):4:($8) w errorbars title "10" ls 3,\
-	'DJ1_data.txt' u ($1-250):5:($9) w errorbars title "11" ls 4,\
+plot 'DJ1_data.txt' u ($1-100):2 title "00" ls 1 ,\
+	'DJ1_data.txt' u ($1-100):3 title "01" ls 2,\
+	'DJ1_data.txt' u ($1-100):4 title "10" ls 3,\
+	'DJ1_data.txt' u ($1-100):5 title "11" ls 4,\
 	'pop_Iden.txt' u ($1*1e9):2 w l notitle ls 1,\
 	'pop_Iden.txt' u ($1*1e9):3 w l notitle ls 2,\
 	'pop_Iden.txt' u ($1*1e9):4 w l notitle ls 3,\
 	'pop_Iden.txt' u ($1*1e9):5 w l notitle ls 4
 set xrange [0:700]
 set output 'DJ2_CNOT.eps'
-plot 'DJ2_data.txt' u ($1-250):($2/1.04):($6) w errorbars title "00" ls 1 ,\
-	'DJ2_data.txt' u ($1-250):($3/1.04):($7) w errorbars title "01" ls 2,\
-	'DJ2_data.txt' u ($1-250):($4/1.04):($8) w errorbars title "10" ls 3,\
-	'DJ2_data.txt' u ($1-250):($5/1.04):($9) w errorbars title "11" ls 4,\
+plot 'DJ2_data.txt' u ($1-100):($2) title "00" ls 1 ,\
+	'DJ2_data.txt' u ($1-100):($3) title "01" ls 2,\
+	'DJ2_data.txt' u ($1-100):($4) title "10" ls 3,\
+	'DJ2_data.txt' u ($1-100):($5) title "11" ls 4,\
 	'pop_CNOT.txt' u ($1*1e9):2 w l notitle ls 1,\
 	'pop_CNOT.txt' u ($1*1e9):3 w l notitle ls 2,\
 	'pop_CNOT.txt' u ($1*1e9):4 w l notitle ls 3,\
 	'pop_CNOT.txt' u ($1*1e9):5 w l notitle ls 4
 set xrange [0 :600]
 set output 'DJ3_NOT.eps'
-plot 'DJ3_data.txt' u ($1-250):($2/1.0):($6) w errorbars title "00" ls 1 ,\
-	'DJ3_data.txt' u ($1-250):($3/1.0):($7) w errorbars title "01" ls 2,\
-	'DJ3_data.txt' u ($1-250):($4/1.0):($8) w errorbars title "10" ls 3,\
-	'DJ3_data.txt' u ($1-250):($5/1.0):($9) w errorbars title "11" ls 4,\
+plot 'DJ3_data.txt' u ($1-100):($2/1.0) title "00" ls 1 ,\
+	'DJ3_data.txt' u ($1-100):($3/1.0) title "01" ls 2,\
+	'DJ3_data.txt' u ($1-100):($4/1.0) title "10" ls 3,\
+	'DJ3_data.txt' u ($1-100):($5/1.0) title "11" ls 4,\
 	'pop_NOT.txt' u ($1*1e9):2 w l notitle ls 1,\
 	'pop_NOT.txt' u ($1*1e9):3 w l notitle ls 2,\
 	'pop_NOT.txt' u ($1*1e9):4 w l notitle ls 3,\
@@ -49,10 +49,10 @@ plot 'DJ3_data.txt' u ($1-250):($2/1.0):($6) w errorbars title "00" ls 1 ,\
 
 set xrange [0 :700]
 set output 'DJ4_CNOT_low.eps'
-plot 'DJ4_data.txt' u ($1-250):($2/1.04):($6) w errorbars title "00" ls 1 ,\
-	'DJ4_data.txt' u ($1-250):($3/1.04):($7) w errorbars title "01" ls 2,\
-	'DJ4_data.txt' u ($1-250):($4/1.04):($8) w errorbars title "10" ls 3,\
-	'DJ4_data.txt' u ($1-250):($5/1.04):($9) w errorbars title "11" ls 4,\
+plot 'DJ4_data.txt' u ($1-100):($2) title "00" ls 1 ,\
+	'DJ4_data.txt' u ($1-100):($3) title "01" ls 2,\
+	'DJ4_data.txt' u ($1-100):($4) title "10" ls 3,\
+	'DJ4_data.txt' u ($1-100):($5) title "11" ls 4,\
 	'pop_CNOT_low.txt' u ($1*1e9):2 w l notitle ls 1,\
 	'pop_CNOT_low.txt' u ($1*1e9):3 w l notitle ls 2,\
 	'pop_CNOT_low.txt' u ($1*1e9):4 w l notitle ls 3,\

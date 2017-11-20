@@ -1,5 +1,5 @@
 import sys
-sys.path.append('./../../')
+sys.path.append('./../../../')
 from c_solver.double_dot_sim_class import *
 import c_solver.ME_solver as me 
 
@@ -7,10 +7,10 @@ import numpy as np
 from set_noise import *
 
 def test_t2():
+	# T2*= 1 us
+	psi0= np.array(list(basis(6,0)*basis(6,0).dag()+basis(6,2)*basis(6,0).dag()+basis(6,0)*basis(6,2).dag()+basis(6,2)*basis(6,2).dag()))[:,0]/2
 	# T2*= 0.6 us
 	psi0= np.array(list(basis(6,0)*basis(6,0).dag()+basis(6,1)*basis(6,0).dag()+basis(6,0)*basis(6,1).dag()+basis(6,1)*basis(6,1).dag()))[:,0]/2
-	# T2*= 1 us
-	# psi0= np.array(list(basis(6,0)*basis(6,0).dag()+basis(6,2)*basis(6,0).dag()+basis(6,0)*basis(6,2).dag()+basis(6,2)*basis(6,2).dag()))[:,0]/2
 
 	# define hamiltonian
 	db = double_dot_hamiltonian(18.4e9, 19.7e9, 850e9, 840e9, 0*0.250e9)
@@ -24,14 +24,16 @@ def test_t2():
 	# Add noise object to simulation object.
 	# db.awg_pulse(detuningE/np.pi/2, 0e-9, 1000e-9, 1e-9)
 	db = add_nuclear_and_charge_noise(db)
-	db.number_of_sim_for_static_noise(400)
-	db.calc_time_evolution(psi0, 0e-9, 1600e-9, 4000)
+	db.number_of_sim_for_static_noise(2000)
+	db.calc_time_evolution(psi0, 0e-9, 600e-9, 500)
 	db.plot_expect()
 	# db.plot_pop()
 	
 	plt.show()
+
 test_t2()
-def expected_value(t, right_qubit = True, num_sim=200):
+
+def expected_value(t, right_qubit = True, num_sim=500):
 	psi0= np.array(list(basis(6,0)*basis(6,0).dag()))[:,0]
 	# define hamiltonian
 	db = double_dot_hamiltonian(19.7e9, 18.4e9, 850e9, 840e9, 0.250e9)
@@ -65,8 +67,8 @@ def expected_value(t, right_qubit = True, num_sim=200):
 
 
 	db.calc_time_evolution(psi0, 0e-9, 500e-9+2*t, int((500e-9+2*t)*1e9*100))
-	# db.plot_pop()
-	# plt.show()
+	db.plot_pop()
+	plt.show()
 	# raise
 
 	rho =  db.get_density_matrix_final()
@@ -78,6 +80,9 @@ def expected_value(t, right_qubit = True, num_sim=200):
 
 	return np.array([pop_00, pop_01, pop_10, pop_11])
 	# db.save_pop("./../GROVERS_DATA/NORMAL/pop"+state+".txt")
+
+# a= expected_value(1.69e-6, right_qubit=False)
+# print(a)
 
 # print(expected_value(0, right_qubit=False))
 # density = 80
