@@ -20,36 +20,36 @@ def Deutche_Jova(func,num_sim=1000):
 
 		db.number_of_sim_for_static_noise(num_sim)
 
-	db.mw_pulse(18.4e9,0,2.5e6,50e-9,150e-9)
-	db.mw_pulse(19.7e9,np.pi,2.5e6,50e-9,150e-9)
+	db.mw_pulse(18.4e9,0,2e6,50e-9,175e-9)
+	db.mw_pulse(19.7e9,np.pi,2e6,50e-9,175e-9)
 
 	if func == 'Iden':
 		phase_qb1 = 0
 		phase_qb2 = 0
-		extra_time = -10e-9
+		extra_time = 0e-9
 	if func == 'NOT':
-		db.mw_pulse(19.7e9,-np.pi/2,2.5e6,150e-9,350e-9)
+		db.mw_pulse(19.7e9,-np.pi/2,2e6,175e-9,425e-9)
 		phase_qb1 = 0
 		phase_qb2 = 0
-		extra_time = 0e-9
+		extra_time = 50e-9
 
 	if func == 'CNOT':
 		a =35e-9
-		db.mw_pulse(19.7e9,np.pi,2.5e6,150e-9,250e-9)
-		db.awg_pulse(detuningE/np.pi/2, 300e-9, 350e-9+a, 1e-9)
-		db.mw_pulse(19.7e9,-np.pi/2,2.5e6,400e-9,500e-9)
+		db.mw_pulse(19.7e9,np.pi,2e6,175e-9,300e-9)
+		db.awg_pulse(detuningE/np.pi/2, 310e-9, 360e-9+a, 1e-9)
+		db.mw_pulse(19.7e9,-np.pi/2,2e6,405e-9,530e-9)
 		phase_qb1 = -np.pi/2
 		phase_qb2 = -np.pi/2
-		extra_time= 125e-9 
+		extra_time= 155e-9 
 
 	if func == 'CNOT_low':
 		a =35e-9
-		db.mw_pulse(19.7e9,0,2.5e6,150e-9,250e-9)
-		db.awg_pulse(detuningE/np.pi/2, 308e-9, 358e-9+a, 1e-9)
-		db.mw_pulse(19.7e9,-np.pi/2,2.5e6,400e-9,500e-9)
+		db.mw_pulse(19.7e9,0,2e6,175e-9,300e-9)
+		db.awg_pulse(detuningE/np.pi/2, 310e-9, 360e-9+a, 1e-9)
+		db.mw_pulse(19.7e9,-np.pi/2,2e6,405e-9,530e-9)
 		phase_qb1 = np.pi/2
 		phase_qb2 = np.pi/2
-		extra_time= 125e-9
+		extra_time= 155e-9
 
 	db.mw_pulse(18.4e9,np.pi + phase_qb1,2e6,375e-9+extra_time,500e-9+extra_time)
 	db.mw_pulse(19.7e9,0 + phase_qb2,2e6,375e-9+extra_time,500e-9+extra_time)
@@ -58,29 +58,13 @@ def Deutche_Jova(func,num_sim=1000):
 
 	db.save_pop("./../DJ_DATA/NORMAL/pop_"+func+".txt")
 
-	# if num_sim < 1:
-	# 	db.plot_pop()
-	# 	plt.show()
+	if num_sim < 1:
+		db.plot_pop()
+		plt.show()
 	#db.save_purities("Deutche_Jova/" + func)
-
-# Deutche_Jova('CNOT',0)
-# Deutche_Jova('CNOT_low',0)
 
 
 Deutche_Jova('Iden',5000)
 Deutche_Jova('NOT',5000)
 Deutche_Jova('CNOT',5000)
 Deutche_Jova('CNOT_low',5000)
-
-# mat =  np.matrix( [[1,1,1,1],
-# 					[1,-1,-1,1],
-# 					[-1,1,-1,1],
-# 					[-1,-1,1,1]])/2
-# b1= np.matrix([0,8,58,102])
-# b2= np.matrix([0,31,37,68])
-
-# mat_1 = np.linalg.inv(mat)
-
-# print(mat_1*b1.T)
-
-# print(mat_1*b2.T)

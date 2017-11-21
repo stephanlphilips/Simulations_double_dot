@@ -48,8 +48,8 @@ def grovers(state, show=False, samples= 1):
 	db.mw_pulse(18.4e9,np.pi/2+phaseQ2,2e6,325e-9,450e-9)
 
 	db.awg_pulse(detuningE/np.pi/2, 451e-9, 501e-9+a, 1e-9)
-	db.mw_pulse(19.7e9,np.pi+phaseQ1,2e6,550e-9,675e-9)
-	db.mw_pulse(18.4e9,np.pi+phaseQ2,2e6,550e-9,675e-9)
+	db.mw_pulse(19.7e9,np.pi+phaseQ1,2e6,550e-9+10e-9,675e-9+10e-9)
+	db.mw_pulse(18.4e9,np.pi+phaseQ2,2e6,550e-9+10e-9,675e-9+10e-9)
 
 
 	db.calc_time_evolution(psi0, 0e-9, 700e-9, 70000)

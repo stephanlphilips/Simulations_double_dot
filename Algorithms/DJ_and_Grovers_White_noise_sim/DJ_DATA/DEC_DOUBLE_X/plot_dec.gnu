@@ -26,33 +26,33 @@ plot 'DJ1_dec.txt' u ($1+50):2:($6) w errorbars title "00" ls 1 ,\
 	'pop_Iden_DOUBLE_X.txt' u ($1*1e9):3 w l notitle ls 2,\
 	'pop_Iden_DOUBLE_X.txt' u ($1*1e9):4 w l notitle ls 3,\
 	'pop_Iden_DOUBLE_X.txt' u ($1*1e9):5 w l notitle ls 4
-set xrange [0:1100]
+set xrange [0:1200]
 set output 'DJ2_dec_CNOT.eps'
-plot 'DJ2_dec.txt' u ($1+50):2:($6) w errorbars title "00" ls 1 ,\
-	'DJ2_dec.txt' u ($1+50):4:($7) w errorbars title "01" ls 2,\
-	'DJ2_dec.txt' u ($1+50):3:($8) w errorbars title "10" ls 3,\
-	'DJ2_dec.txt' u ($1+50):5:($9) w errorbars title "11" ls 4,\
+plot 'DJ2_dec.txt' u ($1+170):2:($6) w errorbars title "00" ls 1 ,\
+	'DJ2_dec.txt' u ($1+170):4:($7) w errorbars title "01" ls 2,\
+	'DJ2_dec.txt' u ($1+170):3:($8) w errorbars title "10" ls 3,\
+	'DJ2_dec.txt' u ($1+170):5:($9) w errorbars title "11" ls 4,\
 	'pop_CNOT_DOUBLE_X.txt' u ($1*1e9):2 w l notitle ls 1,\
 	'pop_CNOT_DOUBLE_X.txt' u ($1*1e9):3 w l notitle ls 2,\
 	'pop_CNOT_DOUBLE_X.txt' u ($1*1e9):4 w l notitle ls 3,\
 	'pop_CNOT_DOUBLE_X.txt' u ($1*1e9):5 w l notitle ls 4
 set xrange [0 :1100]
 set output 'DJ3_dec_NOT.eps'
-plot 'DJ3_dec.txt' u ($1+50):2:($6) w errorbars title "00" ls 1 ,\
-	'DJ3_dec.txt' u ($1+50):4:($7) w errorbars title "01" ls 2,\
-	'DJ3_dec.txt' u ($1+50):3:($8) w errorbars title "10" ls 3,\
-	'DJ3_dec.txt' u ($1+50):5:($9) w errorbars title "11" ls 4,\
+plot 'DJ3_dec.txt' u ($1+170):2:($6) w errorbars title "00" ls 1 ,\
+	'DJ3_dec.txt' u ($1+170):4:($7) w errorbars title "01" ls 2,\
+	'DJ3_dec.txt' u ($1+170):3:($8) w errorbars title "10" ls 3,\
+	'DJ3_dec.txt' u ($1+170):5:($9) w errorbars title "11" ls 4,\
 	'pop_NOT_DOUBLE_X.txt' u ($1*1e9):2 w l notitle ls 1,\
 	'pop_NOT_DOUBLE_X.txt' u ($1*1e9):3 w l notitle ls 2,\
 	'pop_NOT_DOUBLE_X.txt' u ($1*1e9):4 w l notitle ls 3,\
 	'pop_NOT_DOUBLE_X.txt' u ($1*1e9):5 w l notitle ls 4
 
-set xrange [0 :1100]
+set xrange [0 :1200]
 set output 'DJ4_dec_CNOT_low.eps'
-plot 'DJ4_dec.txt' u ($1+50):2:($6) w errorbars title "00" ls 1 ,\
-	'DJ4_dec.txt' u ($1+50):4:($7) w errorbars title "01" ls 2,\
-	'DJ4_dec.txt' u ($1+50):3:($8) w errorbars title "10" ls 3,\
-	'DJ4_dec.txt' u ($1+50):5:($9) w errorbars title "11" ls 4,\
+plot 'DJ4_dec.txt' u ($1+170):2:($6) w errorbars title "00" ls 1 ,\
+	'DJ4_dec.txt' u ($1+170):4:($7) w errorbars title "01" ls 2,\
+	'DJ4_dec.txt' u ($1+170):3:($8) w errorbars title "10" ls 3,\
+	'DJ4_dec.txt' u ($1+170):5:($9) w errorbars title "11" ls 4,\
 	'pop_CNOT_low_DOUBLE_X.txt' u ($1*1e9):2 w l notitle ls 1,\
 	'pop_CNOT_low_DOUBLE_X.txt' u ($1*1e9):3 w l notitle ls 2,\
 	'pop_CNOT_low_DOUBLE_X.txt' u ($1*1e9):4 w l notitle ls 3,\

@@ -24,63 +24,66 @@ def Deutche_Jova(func,num_sim=1000):
 
 
 
-	db.mw_pulse(18.4e9,0,2.5e6,50e-9,150e-9)
-	db.mw_pulse(19.7e9,np.pi,2.5e6,50e-9,150e-9)
+	db.mw_pulse(18.4e9,0,2e6,50e-9,175e-9)
+	db.mw_pulse(19.7e9,np.pi,2e6,50e-9,175e-9)
 
 	if func == 'Iden':
-		db.mw_pulse(18.4e9,0,2.5e6,150e-9,550e-9)
-		db.mw_pulse(19.7e9,0,2.5e6,150e-9,550e-9)
+		db.mw_pulse(18.4e9,0,2e6,175e-9,675e-9)
+		db.mw_pulse(19.7e9,0,2e6,175e-9,675e-9)
 		phase_qb1 = 0
 		phase_qb2 = 0
-		extra_time = 200e-9
+		extra_time = 325e-9
 	if func == 'NOT':
-		db.mw_pulse(19.7e9,np.pi/2,2.5e6,150e-9,350e-9)
+		db.mw_pulse(19.7e9,np.pi/2,2e6,175e-9,425e-9)
 
 		phase_qb1 = 0
 		phase_qb2 = 0
-		extra_time = 10e-9
+		extra_time = 75e-9
 
 	if func == 'CNOT':
 		a =40e-9
-		db.mw_pulse(19.7e9,0,2.5e6,150e-9,250e-9)
+		db.mw_pulse(19.7e9,0,2e6,175e-9,300e-9)
 
-		db.mw_pulse(18.4e9,0,2.5e6,250e-9,450e-9)
-		db.mw_pulse(19.7e9,0,2.5e6,250e-9,450e-9)
-		db.awg_pulse(detuningE/np.pi/2, 450e-9, 450e-9+a, 1e-9)
-		db.mw_pulse(18.4e9,0,2.5e6,500e-9,699e-9)
-		db.mw_pulse(19.7e9,0,2.5e6,500e-9,699e-9)
-		db.awg_pulse(detuningE/np.pi/2, 700e-9, 700e-9+a, 1e-9)
+		db.mw_pulse(18.4e9,0,2e6,300e-9,550e-9)
+		db.mw_pulse(19.7e9,0,2e6,300e-9,550e-9)
+		db.awg_pulse(detuningE/np.pi/2, 550e-9, 550e-9+a, 1e-9)
+		db.mw_pulse(18.4e9,0,2e6,600e-9,850e-9)
+		db.mw_pulse(19.7e9,0,2e6,600e-9,850e-9)
+		db.awg_pulse(detuningE/np.pi/2, 850e-9, 850e-9+a, 1e-9)
 
-		db.mw_pulse(19.7e9,np.pi/2,2.5e6,750e-9,850e-9)
+		db.mw_pulse(19.7e9,np.pi/2,2e6,900e-9,1025e-9)
 		phase_qb1 = np.pi/2
 		phase_qb2 = -np.pi/2
-		extra_time= 500e-9 +a
+		extra_time= 675e-9
 
 	if func == 'CNOT_low':
 		a =40e-9
-		db.mw_pulse(19.7e9,np.pi,2.5e6,150e-9,250e-9)
 
-		db.mw_pulse(18.4e9,0,2.5e6,250e-9,450e-9)
-		db.mw_pulse(19.7e9,0,2.5e6,250e-9,450e-9)
-		db.awg_pulse(detuningE/np.pi/2, 450e-9, 450e-9+a, 1e-9)
-		db.mw_pulse(18.4e9,0,2.5e6,500e-9,700e-9)
-		db.mw_pulse(19.7e9,0,2.5e6,500e-9,700e-9)
-		db.awg_pulse(detuningE/np.pi/2, 700e-9, 700e-9+a, 1e-9)
+		db.mw_pulse(19.7e9,np.pi,2e6,175e-9,300e-9)
 
-		db.mw_pulse(19.7e9,np.pi/2,2.5e6,750e-9,850e-9)
+		db.mw_pulse(18.4e9,0,2e6,300e-9,550e-9)
+		db.mw_pulse(19.7e9,0,2e6,300e-9,550e-9)
+		db.awg_pulse(detuningE/np.pi/2, 550e-9, 550e-9+a, 1e-9)
+		db.mw_pulse(18.4e9,0,2e6,600e-9,850e-9)
+		db.mw_pulse(19.7e9,0,2e6,600e-9,850e-9)
+		db.awg_pulse(detuningE/np.pi/2, 850e-9, 850e-9+a, 1e-9)
+
+		db.mw_pulse(19.7e9,np.pi/2,2e6,900e-9,1025e-9)
+
 		phase_qb1 = -np.pi/2
 		phase_qb2 = np.pi/2
-		extra_time= 500e-9 +a
+		extra_time= 675e-9
 
 
-	db.mw_pulse(18.4e9,np.pi + phase_qb1,2.5e6,350e-9+extra_time,450e-9+extra_time)
-	db.mw_pulse(19.7e9,0 + phase_qb2,2.5e6,350e-9+extra_time,450e-9+extra_time)
+	db.mw_pulse(18.4e9,np.pi + phase_qb1,2e6,350e-9+extra_time,475e-9+extra_time)
+	db.mw_pulse(19.7e9,0 + phase_qb2,2e6,350e-9+extra_time,475e-9+extra_time)
 
-	db.calc_time_evolution(psi0, 0e-9, 1100e-9, 110000)
-	# db.plot_expect()
-	# db.plot_pop()
+	db.calc_time_evolution(psi0, 0e-9, 475e-9+extra_time, int((475e-9+extra_time)*1e9*100))
+	if num_sim ==1:
+		db.plot_expect()
+		db.plot_pop()
 	
-	# plt.show()
+		plt.show()
 
 	db.save_pop("./../DJ_DATA/DEC_DOUBLE_X/pop_"+func+"_DOUBLE_X.txt")
 	# db.save_purities("Deutche_Jova/" + func)
@@ -95,5 +98,3 @@ Deutche_Jova('Iden',5000)
 Deutche_Jova('NOT',5000)
 Deutche_Jova('CNOT',5000)
 Deutche_Jova('CNOT_low',5000)
-
-

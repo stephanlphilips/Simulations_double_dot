@@ -1,9 +1,10 @@
 import sys
-sys.path.append('./../')
+sys.path.append('./../../../')
 from c_solver.double_dot_sim_class import *
 import c_solver.ME_solver as me 
 
 import numpy as np
+
 
 
 def add_nuclear_and_charge_noise(sim_object, T2_electric=0.82e-6):
